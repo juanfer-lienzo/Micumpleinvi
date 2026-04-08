@@ -62,10 +62,10 @@ export default function Home() {
       <main className="min-h-screen flex items-center justify-center p-4 bg-ocean">
         <div className="card-main p-8 md:p-12 max-w-lg w-full text-center">
           <Image
-            src="/straw-hat.svg"
+            src="/straw-hat.png"
             alt="Sombrero de paja"
             width={100}
-            height={62}
+            height={100}
             className="mx-auto mb-4"
           />
           <h2 className="text-3xl font-bold mb-3">
@@ -96,11 +96,11 @@ export default function Home() {
       {/* Straw Hat Header */}
       <div className="text-center mt-8 md:mt-12 mb-6">
         <Image
-          src="/straw-hat.svg"
+          src="/straw-hat.png"
           alt="Sombrero de paja"
-          width={140}
-          height={87}
-          className="mx-auto mb-4 animate-gentle-float"
+          width={160}
+          height={160}
+          className="mx-auto mb-4 animate-gentle-float drop-shadow-2xl"
           priority
         />
         <h1 className="text-4xl md:text-5xl font-bold mb-1">
@@ -112,24 +112,16 @@ export default function Home() {
       </div>
 
       {/* Wanted Poster */}
-      <div className="wanted-poster mx-auto mb-8 max-w-xs w-full">
-        <div className="wanted-inner">
-          <p className="wanted-title">WANTED</p>
-          <div className="wanted-photo">
-            <Image
-              src="/wanted.png"
-              alt="Wanted poster"
-              width={220}
-              height={220}
-              className="wanted-img"
-            />
-          </div>
-          <p className="wanted-doa">DEAD OR ALIVE</p>
-          <p className="wanted-name">JUANFER</p>
-          <p className="wanted-bounty">$300.000.000-</p>
-          <div className="wanted-marine">
-            <span>MARINE</span>
-          </div>
+      <div className="mx-auto mb-8 max-w-[280px] w-full">
+        <div className="wanted-frame">
+          <Image
+            src="/wanted.png"
+            alt="Wanted - Juanfer"
+            width={280}
+            height={340}
+            className="rounded-md w-full h-auto"
+            priority
+          />
         </div>
       </div>
 
