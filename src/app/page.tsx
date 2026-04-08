@@ -58,23 +58,26 @@ export default function Home() {
 
   if (enviado) {
     return (
-      <main className="min-h-screen flex items-center justify-center p-4 wave-bg">
-        <div className="card-invitation p-8 md:p-12 max-w-lg w-full text-center animate-pulse-gold">
-          <div className="text-6xl mb-4">🏴‍☠️</div>
-          <h2 className="font-pirata text-3xl text-gold mb-4">
-            ¡Nakama Confirmado!
+      <main className="min-h-screen flex items-center justify-center p-4 bg-ocean">
+        <div className="card-main p-8 md:p-12 max-w-lg w-full text-center">
+          <div className="straw-hat mb-4">👒</div>
+          <h2 className="text-3xl font-bold mb-3">
+            ¡Confirmado!
           </h2>
-          <p className="text-lg mb-2">{respuesta}</p>
-          <p className="text-gold text-xl font-bold mb-6">
-            Total de personas: {totalPersonas}
+          <p className="text-lg mb-2 opacity-90">{respuesta}</p>
+          <p className="text-xl font-bold mb-6" style={{ color: 'var(--accent-light)' }}>
+            {totalPersonas} {totalPersonas === 1 ? "persona" : "personas"}
           </p>
-          <div className="bg-parchment rounded-lg p-4 text-gray-800 mb-6">
-            <p className="font-bold">Recuerda:</p>
-            <p>Domingo 12 de Abril, 2026</p>
-            <p>12:00 PM (Mediodía)</p>
+          <div className="info-card p-5 mb-6 text-left">
+            <p className="font-bold text-lg mb-2">Detalles del evento</p>
+            <div className="space-y-1 text-sm">
+              <p>📅 Domingo 12 de Abril, 2026</p>
+              <p>🕛 12:00 PM (Mediodía)</p>
+              <p>👒 Temática: One Piece</p>
+            </div>
           </div>
-          <p className="text-sm opacity-70">
-            ¡Nos vemos en el Grand Line! 🌊
+          <p className="text-sm opacity-50">
+            ¡Nos vemos el domingo!
           </p>
         </div>
       </main>
@@ -82,101 +85,81 @@ export default function Home() {
   }
 
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center p-4 wave-bg">
+    <main className="min-h-screen flex flex-col items-center justify-center p-4 bg-ocean">
       {/* Header */}
-      <div className="text-center mb-8 animate-float">
-        <div className="jolly-roger mb-2">🏴‍☠️</div>
-        <h1 className="font-pirata text-5xl md:text-7xl text-gold mb-2">
-          Nakama Party
+      <div className="text-center mb-8">
+        <div className="straw-hat mb-3 animate-gentle-float">👒</div>
+        <h1 className="text-4xl md:text-5xl font-bold mb-2">
+          ¡Estás Invitado!
         </h1>
-        <p className="text-xl md:text-2xl opacity-80">
-          ¡Estás invitado a zarpar con nosotros!
+        <p className="text-lg opacity-70">
+          Fiesta de cumpleaños
         </p>
       </div>
 
-      {/* Invitation Card */}
-      <div className="card-invitation p-6 md:p-10 max-w-2xl w-full">
+      {/* Main Card */}
+      <div className="card-main p-6 md:p-10 max-w-2xl w-full">
         {/* Event Info */}
-        <div className="text-center mb-8">
-          <h2 className="font-pirata text-3xl md:text-4xl text-gold mb-4">
-            Fiesta de Cumpleaños
-          </h2>
-          <div className="bg-parchment rounded-lg p-6 text-gray-800 inline-block w-full">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
-              <div>
-                <p className="text-2xl mb-1">📅</p>
-                <p className="font-bold text-lg">Domingo</p>
-                <p>12 de Abril, 2026</p>
-              </div>
-              <div>
-                <p className="text-2xl mb-1">⏰</p>
-                <p className="font-bold text-lg">Mediodía</p>
-                <p>12:00 PM</p>
-              </div>
-              <div>
-                <p className="text-2xl mb-1">👒</p>
-                <p className="font-bold text-lg">Temática</p>
-                <p>One Piece</p>
-              </div>
+        <div className="info-card p-6 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+            <div>
+              <p className="text-2xl mb-1">📅</p>
+              <p className="font-bold">Domingo</p>
+              <p className="text-sm text-gray-600">12 de Abril, 2026</p>
+            </div>
+            <div>
+              <p className="text-2xl mb-1">🕛</p>
+              <p className="font-bold">Mediodía</p>
+              <p className="text-sm text-gray-600">12:00 PM</p>
+            </div>
+            <div>
+              <p className="text-2xl mb-1">👒</p>
+              <p className="font-bold">One Piece</p>
+              <p className="text-sm text-gray-600">Temática de la fiesta</p>
             </div>
           </div>
-        </div>
-
-        {/* Dress Code Note */}
-        <div className="text-center mb-8 p-4 rounded-lg" style={{ background: 'rgba(192, 57, 43, 0.2)', border: '1px solid rgba(192, 57, 43, 0.4)' }}>
-          <p className="text-lg">
-            🎭 ¡Ven disfrazado de tu personaje favorito de One Piece!
-          </p>
-          <p className="text-sm opacity-70 mt-1">
-            (Opcional pero altamente recomendado, nakama)
-          </p>
         </div>
 
         {/* RSVP Form */}
         <form onSubmit={enviarConfirmacion} className="space-y-6">
           <div>
-            <label className="block text-gold font-bold mb-2 text-lg">
+            <label className="block font-semibold mb-2">
               Tu Nombre *
             </label>
             <input
               type="text"
               value={nombre}
               onChange={(e) => setNombre(e.target.value)}
-              className="input-pirate"
-              placeholder="Escribe tu nombre completo"
+              className="input-field"
+              placeholder="Nombre completo"
               required
             />
           </div>
 
           {/* Acompañantes Section */}
-          <div className="space-y-4">
+          <div className="space-y-3">
             <div className="flex items-center justify-between">
-              <label className="block text-gold font-bold text-lg">
-                Acompañantes
+              <label className="block font-semibold">
+                ¿Vienes con alguien?
               </label>
               <button
                 type="button"
                 onClick={agregarAcompanante}
-                className="bg-transparent border-2 border-dashed border-gold text-gold px-4 py-2 rounded-lg hover:bg-gold hover:text-gray-900 transition-all font-bold text-sm"
+                className="text-sm px-4 py-2 rounded-lg border border-dashed border-white/20 hover:bg-white/10 transition-all"
               >
-                + Agregar Acompañante
+                + Agregar persona
               </button>
             </div>
 
-            <div className="p-4 rounded-lg" style={{ background: 'rgba(212, 160, 23, 0.1)', border: '1px dashed rgba(212, 160, 23, 0.3)' }}>
-              <p className="text-sm opacity-80 mb-1">
-                ☝️ <strong>Importante:</strong> Si vienes con más personas, agrégalas aquí para que podamos preparar todo.
-              </p>
-              <p className="text-sm opacity-60">
-                Puedes agregar a familiares, amigos, pareja o quien te acompañe. ¡Todos son bienvenidos a la tripulación!
-              </p>
-            </div>
+            <p className="text-sm opacity-50">
+              Si vienes acompañado, agrega a cada persona para que podamos preparar todo bien.
+            </p>
 
             {acompanantes.length > 0 && (
               <div className="space-y-2">
                 {acompanantes.map((acomp, index) => (
                   <div key={index} className="guest-row flex items-center gap-3">
-                    <span className="text-gold font-bold min-w-[24px]">
+                    <span className="opacity-40 text-sm min-w-[20px]">
                       {index + 1}.
                     </span>
                     <input
@@ -185,35 +168,35 @@ export default function Home() {
                       onChange={(e) =>
                         actualizarAcompanante(index, e.target.value)
                       }
-                      className="input-pirate flex-1"
-                      placeholder={`Nombre del acompañante ${index + 1}`}
+                      className="input-field flex-1"
+                      placeholder={`Nombre del acompañante`}
                     />
                     <button
                       type="button"
                       onClick={() => eliminarAcompanante(index)}
-                      className="text-red-400 hover:text-red-300 text-xl font-bold px-2 transition-colors"
+                      className="opacity-40 hover:opacity-100 text-lg px-2 transition-opacity"
                       title="Eliminar"
                     >
                       ✕
                     </button>
                   </div>
                 ))}
-                <p className="text-gold text-sm font-bold text-right">
-                  Total de personas: {1 + acompanantes.filter(a => a.nombre.trim()).length}
+                <p className="text-sm opacity-60 text-right">
+                  Total: {1 + acompanantes.filter(a => a.nombre.trim()).length} {1 + acompanantes.filter(a => a.nombre.trim()).length === 1 ? "persona" : "personas"}
                 </p>
               </div>
             )}
           </div>
 
           <div>
-            <label className="block text-gold font-bold mb-2 text-lg">
-              Mensaje (Opcional)
+            <label className="block font-semibold mb-2">
+              Mensaje <span className="font-normal opacity-50">(opcional)</span>
             </label>
             <textarea
               value={mensaje}
               onChange={(e) => setMensaje(e.target.value)}
-              className="input-pirate min-h-[80px] resize-none"
-              placeholder="¿Algún mensaje para el capitán? ¿Alergias alimentarias? ¿Algo que debamos saber?"
+              className="input-field min-h-[80px] resize-none"
+              placeholder="¿Algún mensaje, alergia alimentaria o algo que debamos saber?"
               rows={3}
             />
           </div>
@@ -221,16 +204,16 @@ export default function Home() {
           <button
             type="submit"
             disabled={enviando || !nombre.trim()}
-            className="btn-pirate w-full text-lg"
+            className="btn-primary w-full"
           >
-            {enviando ? "Enviando..." : "⚓ Confirmar Asistencia ⚓"}
+            {enviando ? "Enviando..." : "Confirmar asistencia"}
           </button>
         </form>
       </div>
 
       {/* Footer */}
-      <footer className="mt-8 text-center opacity-50 text-sm pb-8">
-        <p>「ひとつなぎの大宴会」- La Gran Fiesta del One Piece</p>
+      <footer className="mt-8 text-center opacity-30 text-sm pb-8">
+        <p>👒 One Piece Birthday Party</p>
       </footer>
     </main>
   );
