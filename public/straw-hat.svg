@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" fill="none">
+  <!-- Shadow -->
+  <ellipse cx="200" cy="235" rx="170" ry="15" fill="rgba(0,0,0,0.08)"/>
+
+  <!-- Brim back -->
+  <ellipse cx="200" cy="175" rx="190" ry="55" fill="#C4993B"/>
+  <ellipse cx="200" cy="175" rx="190" ry="55" fill="url(#brimGrad)" opacity="0.6"/>
+  <ellipse cx="200" cy="172" rx="186" ry="52" fill="#D4A843"/>
+
+  <!-- Brim straw texture lines -->
+  <ellipse cx="200" cy="175" rx="175" ry="48" fill="none" stroke="#B8912F" stroke-width="0.8" opacity="0.5"/>
+  <ellipse cx="200" cy="175" rx="160" ry="42" fill="none" stroke="#B8912F" stroke-width="0.8" opacity="0.4"/>
+  <ellipse cx="200" cy="175" rx="145" ry="36" fill="none" stroke="#B8912F" stroke-width="0.8" opacity="0.3"/>
+
+  <!-- Radial lines on brim -->
+  <line x1="200" y1="120" x2="30" y2="185" stroke="#B8912F" stroke-width="0.6" opacity="0.3"/>
+  <line x1="200" y1="120" x2="60" y2="195" stroke="#B8912F" stroke-width="0.6" opacity="0.3"/>
+  <line x1="200" y1="120" x2="100" y2="205" stroke="#B8912F" stroke-width="0.6" opacity="0.3"/>
+  <line x1="200" y1="120" x2="150" y2="215" stroke="#B8912F" stroke-width="0.6" opacity="0.3"/>
+  <line x1="200" y1="120" x2="250" y2="215" stroke="#B8912F" stroke-width="0.6" opacity="0.3"/>
+  <line x1="200" y1="120" x2="300" y2="205" stroke="#B8912F" stroke-width="0.6" opacity="0.3"/>
+  <line x1="200" y1="120" x2="340" y2="195" stroke="#B8912F" stroke-width="0.6" opacity="0.3"/>
+  <line x1="200" y1="120" x2="370" y2="185" stroke="#B8912F" stroke-width="0.6" opacity="0.3"/>
+
+  <!-- Crown -->
+  <path d="M120 170 Q120 60 200 50 Q280 60 280 170" fill="#D4A843"/>
+  <path d="M120 170 Q120 60 200 50 Q280 60 280 170" fill="url(#crownGrad)" opacity="0.4"/>
+
+  <!-- Crown straw texture -->
+  <path d="M130 160 Q200 155 270 160" fill="none" stroke="#B8912F" stroke-width="0.8" opacity="0.4"/>
+  <path d="M125 145 Q200 140 275 145" fill="none" stroke="#B8912F" stroke-width="0.8" opacity="0.35"/>
+  <path d="M130 130 Q200 125 270 130" fill="none" stroke="#B8912F" stroke-width="0.8" opacity="0.3"/>
+  <path d="M135 115 Q200 110 265 115" fill="none" stroke="#B8912F" stroke-width="0.8" opacity="0.25"/>
+  <path d="M145 100 Q200 95 255 100" fill="none" stroke="#B8912F" stroke-width="0.8" opacity="0.2"/>
+  <path d="M160 85 Q200 80 240 85" fill="none" stroke="#B8912F" stroke-width="0.8" opacity="0.15"/>
+
+  <!-- Red ribbon -->
+  <path d="M118 140 Q200 130 282 140 L282 165 Q200 155 118 165 Z" fill="#C0392B"/>
+  <path d="M118 140 Q200 130 282 140 L282 165 Q200 155 118 165 Z" fill="url(#ribbonGrad)" opacity="0.3"/>
+
+  <!-- Ribbon stitches -->
+  <line x1="140" y1="145" x2="148" y2="155" stroke="#8B1A1A" stroke-width="1.5" opacity="0.5"/>
+  <line x1="148" y1="145" x2="140" y2="155" stroke="#8B1A1A" stroke-width="1.5" opacity="0.5"/>
+  <line x1="250" y1="143" x2="258" y2="153" stroke="#8B1A1A" stroke-width="1.5" opacity="0.5"/>
+  <line x1="258" y1="143" x2="250" y2="153" stroke="#8B1A1A" stroke-width="1.5" opacity="0.5"/>
+
+  <!-- Outline -->
+  <path d="M120 170 Q120 60 200 50 Q280 60 280 170" fill="none" stroke="#6B4513" stroke-width="2.5"/>
+  <ellipse cx="200" cy="175" rx="190" ry="55" fill="none" stroke="#6B4513" stroke-width="2.5"/>
+
+  <!-- Brim front overlay (covers crown base) -->
+  <path d="M10 175 Q100 220 200 230 Q300 220 390 175 Q300 210 200 218 Q100 210 10 175 Z" fill="#D9B04A" opacity="0.3"/>
+
+  <defs>
+    <linearGradient id="crownGrad" x1="200" y1="50" x2="200" y2="170" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#F0D060"/>
+      <stop offset="100%" stop-color="#B8912F"/>
+    </linearGradient>
+    <linearGradient id="brimGrad" x1="200" y1="120" x2="200" y2="230" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#E8C04A"/>
+      <stop offset="100%" stop-color="#A07828"/>
+    </linearGradient>
+    <linearGradient id="ribbonGrad" x1="200" y1="130" x2="200" y2="165" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FF6B6B"/>
+      <stop offset="100%" stop-color="#8B1A1A"/>
+    </linearGradient>
+  </defs>
+</svg>

@@ -110,3 +110,106 @@ body {
 .animate-gentle-float {
   animation: gentle-float 4s ease-in-out infinite;
 }
+
+/* Wanted Poster */
+.wanted-poster {
+  perspective: 800px;
+}
+
+.wanted-inner {
+  background: linear-gradient(145deg, #e8d5a3 0%, #d4bc82 25%, #e0c992 50%, #c9ae72 75%, #dcc68a 100%);
+  border-radius: 6px;
+  padding: 20px 24px 16px;
+  text-align: center;
+  box-shadow:
+    0 10px 40px rgba(0, 0, 0, 0.5),
+    inset 0 0 60px rgba(139, 109, 56, 0.15);
+  position: relative;
+  transform: rotate(-1deg);
+  transition: transform 0.4s ease;
+}
+
+.wanted-inner:hover {
+  transform: rotate(0deg) scale(1.02);
+}
+
+.wanted-inner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 6px;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 3px,
+    rgba(139, 109, 56, 0.03) 3px,
+    rgba(139, 109, 56, 0.03) 6px
+  );
+  pointer-events: none;
+}
+
+.wanted-title {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #3d2b1f;
+  letter-spacing: 6px;
+  margin-bottom: 8px;
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.1);
+}
+
+.wanted-photo {
+  border: 3px solid #5c4a32;
+  margin: 0 auto 8px;
+  width: fit-content;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.wanted-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: sepia(20%) contrast(1.05);
+}
+
+.wanted-doa {
+  font-family: 'Georgia', serif;
+  font-size: 0.75rem;
+  color: #3d2b1f;
+  letter-spacing: 4px;
+  margin-bottom: 2px;
+}
+
+.wanted-name {
+  font-family: 'Georgia', serif;
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: #3d2b1f;
+  letter-spacing: 3px;
+  margin-bottom: 2px;
+}
+
+.wanted-bounty {
+  font-family: 'Georgia', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #3d2b1f;
+  letter-spacing: 1px;
+}
+
+.wanted-marine {
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.wanted-marine span {
+  font-family: 'Georgia', serif;
+  font-size: 0.9rem;
+  font-weight: 900;
+  color: #3d2b1f;
+  letter-spacing: 4px;
+}
